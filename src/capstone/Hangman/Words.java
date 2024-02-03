@@ -1,8 +1,8 @@
 package capstone.Hangman;
 
-public class Words {
+public class Words extends Play{
+    private String sWord;
 
-    String sWord;
     public static String[] words = {"ant", "baboon", "badger", "bat", "bear", "beaver", "camel",
             "cat", "clam", "cobra", "cougar", "coyote", "crow", "deer",
             "dog", "donkey", "duck", "eagle", "ferret", "fox", "frog", "goat",
@@ -13,14 +13,23 @@ public class Words {
             "tiger", "toad", "trout", "turkey", "turtle", "weasel", "whale", "wolf",
             "wombat", "zebra"};
 
-    public String printWord() {
-        this.sWord = words[(int) ((Math.random() * (Words.words.length - 0) + 0))];
+    public void setsWord(String sWord) {
+        this.sWord = sWord;
+    }
+
+    public String getsWord() {
         return sWord;
     }
 
     public String placeholders() {
-        return sWord.replaceAll(".", "_");
+        return "_".repeat(sWord.length());
 
     }
+
+//    public String gettingRight() {
+//        if(Guess.us)
+//
+//        return null;
+//    }
 
 }

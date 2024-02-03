@@ -60,6 +60,8 @@ public class Gallows {
                     " =========\n"};
 
     public String printGallows() {
-        return (gallows[x]);
+        Play p = new Play();
+        int numb = p.getSizeList();
+        return (gallows[numb]);
     }
 }
