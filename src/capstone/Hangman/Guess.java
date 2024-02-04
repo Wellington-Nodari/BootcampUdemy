@@ -3,16 +3,15 @@ package capstone.Hangman;
 import java.util.ArrayList;
 
 public class Guess extends Words{
-    @Override
-    public String getsWord() {
-        return super.getsWord();
-    }
 
-    ArrayList<Character> letterList;
-    private char userGuess;
-    private ArrayList<String> guesses;
+    static ArrayList<Character> letterList = new ArrayList<>();
+    private static char userGuess;
+    static StringBuilder findingWord;
 
-    public char getUserGuess() {
+    static ArrayList<String> rGuesses = new ArrayList<>();
+    static ArrayList<String> wGuesses = new ArrayList<>();
+
+    public static char getUserGuess() {
         return userGuess;
     }
 
@@ -20,33 +19,41 @@ public class Guess extends Words{
         this.userGuess = userGuess;
     }
 
-    public ArrayList<String> getGuesses() {
-        return guesses;
+    public static ArrayList<String> getWGuesses() {
+        return wGuesses;
     }
 
-    public void setGuesses(String guesses) {
-        this.guesses.add(guesses);
+    public static void setWGuesses(String wGuesses) {
+        Guess.wGuesses.add(wGuesses);
     }
 
-    public ArrayList<String> missedGuess() {
-        letterList = new ArrayList<>();
-        guesses = new ArrayList<>();
+    public static ArrayList<String> getRGuesses() {
+        return rGuesses;
+    }
 
-        try {
-            for (char letter : getsWord().toCharArray()) {
-                letterList.add(letter);
-            }
+    public static void setRGuesses(String rGuesses) {
+        Guess.rGuesses.add(rGuesses);
+    }
 
-            for (char letter : letterList) {
-                if (letter != userGuess) {
-                    String myString = Character.toString(userGuess);
-                    setGuesses(myString);
+    public static ArrayList<Character> getWordInList() {
+        for (char i : getsWord().toCharArray()) {
+        letterList.add(i);
+        }
+        return letterList;
+    }
+
+    public static boolean triedGuess() {
+        findingWord = Words.placeholders();
+
+        if (getsWord().contains(String.valueOf(userGuess))) {
+            for (int i = 0; i < getsWord().length(); i++) {
+                if (getsWord().charAt(i) == userGuess) {
+                    findingWord.setCharAt(i, userGuess);
+                    setRGuesses(String.valueOf(userGuess));
+                    return true;
                 }
             }
-        } catch (NullPointerException exception) {
-            System.out.println("Shiiiit!");
-            }
-        return guesses;
+        } setWGuesses(String.valueOf(userGuess));
+          return false;
     }
-
 }

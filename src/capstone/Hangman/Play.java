@@ -9,43 +9,37 @@ public class Play {
     static ArrayList<String> list = new ArrayList<>();
 
     public static void runGame() {
-
         Gallows gallows = new Gallows();
 
         Words words = new Words();
         words.setsWord(Words.words[(int) ((Math.random() * (Words.words.length) + 0))]);
 
-//        Guess guess = new Guess();
-//        Scanner ug = new Scanner(System.in);
-//        String uGuess = "";
+        String wordVar = "";
+        String misses = "";
 
         Play play = new Play();
 
-
-
         while (list.size() < 6) {
+            misses = String.valueOf(Guess.getWGuesses());
+            wordVar = String.valueOf(words.gettingRight());
+
+            System.out.println("----------------");
+            System.out.println("The Hangman Game");
+            System.out.println("----------------");
+            System.out.println("Word to guess: " + Words.getsWord());
 
             System.out.println(gallows.printGallows());
 
-//            System.out.println(words.getsWord());
-            System.out.println("Word: " + words.placeholders());
-            System.out.println("Misses: " + list);
+            System.out.println("Word: " + wordVar);
+            System.out.println("Misses: " + misses);
 
+            Guess.triedGuess();
             play.guessMethod();
 
-
-//            System.out.print("Guess: ");
-//            uGuess = ug.nextLine();
-//            char charGuess = uGuess.charAt(0);
-//            guess.setUserGuess(charGuess);
-//            list.add(uGuess);
-//            listSize = list.size();
-
-//            System.out.println("List Size: " + listSize);
-
-//            System.out.println(guess.getUserGuess());
         }
 
+        System.out.println(gallows.printGallows());
+        System.out.println("GAME OVER!!!!");
 
     }
 
@@ -58,9 +52,11 @@ public class Play {
         uGuess = ug.nextLine();
         char charGuess = uGuess.charAt(0);
         guess.setUserGuess(charGuess);
-        list.add(uGuess);
-        listSize = list.size();
-        System.out.println(guess.getUserGuess());
+        if (!Guess.triedGuess()) {
+            list.add(String.valueOf(Guess.getWGuesses()));
+            listSize = list.size();
+        }
+//        System.out.println(guess.getUserGuess());
 
     }
 
