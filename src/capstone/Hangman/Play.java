@@ -33,8 +33,9 @@ public class Play {
             System.out.println("Word: " + wordVar);
             System.out.println("Misses: " + misses);
 
-            Guess.triedGuess();
-            play.guessMethod();
+            play.getUserInput();
+//            Guess.triedGuess();
+//            play.guessMethod();
 
         }
 
@@ -43,7 +44,7 @@ public class Play {
 
     }
 
-    public void guessMethod() {
+    public void getUserInput() {
         Guess guess = new Guess();
         Scanner ug = new Scanner(System.in);
         String uGuess = "";

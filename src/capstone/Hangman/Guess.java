@@ -53,7 +53,9 @@ public class Guess extends Words{
                     return true;
                 }
             }
-        } setWGuesses(String.valueOf(userGuess));
-          return false;
+        } else if(!getsWord().contains(String.valueOf(userGuess))) {
+            setWGuesses(String.valueOf(userGuess));
+        } return false;
+
     }
 }
