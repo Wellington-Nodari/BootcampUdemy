@@ -34,8 +34,6 @@ public class Play {
             System.out.println("Misses: " + misses);
 
             play.getUserInput();
-//            Guess.triedGuess();
-//            play.guessMethod();
 
         }
 
@@ -53,12 +51,11 @@ public class Play {
         uGuess = ug.nextLine();
         char charGuess = uGuess.charAt(0);
         guess.setUserGuess(charGuess);
-        if (!Guess.triedGuess()) {
+
+        if (Guess.triedGuess()) {
             list.add(String.valueOf(Guess.getWGuesses()));
             listSize = list.size();
         }
-//        System.out.println(guess.getUserGuess());
-
     }
 
     public int getSizeList() {

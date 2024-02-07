@@ -46,16 +46,18 @@ public class Guess extends Words{
         findingWord = Words.placeholders();
 
         if (getsWord().contains(String.valueOf(userGuess))) {
-            for (int i = 0; i < getsWord().length(); i++) {
+            if (getRGuesses().contains(String.valueOf(userGuess))) {
+                System.out.println("You've already entered this letter, please try another one");
+                return false;
+            } for (int i = 0; i < getsWord().length(); i++) {
                 if (getsWord().charAt(i) == userGuess) {
                     findingWord.setCharAt(i, userGuess);
                     setRGuesses(String.valueOf(userGuess));
-                    return true;
+                    return false;
                 }
             }
-        } else if(!getsWord().contains(String.valueOf(userGuess))) {
-            setWGuesses(String.valueOf(userGuess));
-        } return false;
+        } setWGuesses(String.valueOf(userGuess));
+          return true;
 
     }
 }
