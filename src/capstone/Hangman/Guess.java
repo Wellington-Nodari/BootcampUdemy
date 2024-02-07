@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Guess extends Words{
 
-    static ArrayList<Character> letterList = new ArrayList<>();
+    static char[] letterList;
     private static char userGuess;
     static StringBuilder findingWord;
 
@@ -35,9 +35,10 @@ public class Guess extends Words{
         Guess.rGuesses.add(rGuesses);
     }
 
-    public static ArrayList<Character> getWordInList() {
-        for (char i : getsWord().toCharArray()) {
-        letterList.add(i);
+    public static char[] getWordInList() {
+        letterList = new char[getsWord().length()];
+        for (int i = 0; i < getsWord().length(); i++) {
+        letterList[i] = getsWord().charAt(i);
         }
         return letterList;
     }

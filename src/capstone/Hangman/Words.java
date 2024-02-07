@@ -33,12 +33,16 @@ public class Words extends Play{
 
     public StringBuilder gettingRight() {
         StringBuilder pHolders = placeholders();
-        int index = 0;
-        if (Guess.getWordInList().contains(Guess.getUserGuess())) {
-            index += Guess.getWordInList().indexOf(Guess.getUserGuess());
-            StringBuilder strB = new StringBuilder(pHolders);
-            strB.setCharAt(index, Guess.getUserGuess());
-            pHolders = strB;
+        if (sWord.contains(String.valueOf(Guess.getUserGuess()))) {
+            for (int i = 0 ; i < Guess.getWordInList().length; i++) {
+                int index = 0;
+                if (Guess.getWordInList()[i] == Guess.getUserGuess()) {
+                    index = i;
+                    StringBuilder strB = new StringBuilder(pHolders);
+                    strB.setCharAt(index, Guess.getUserGuess());
+                    pHolders = strB;
+                }
+            }
         }
         return pHolders;
     }

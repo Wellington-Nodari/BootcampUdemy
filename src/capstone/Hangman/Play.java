@@ -1,6 +1,7 @@
 package capstone.Hangman;
 
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Play {
@@ -33,12 +34,16 @@ public class Play {
             System.out.println("Word: " + wordVar);
             System.out.println("Misses: " + misses);
 
+            if (wordVar.equals(Words.getsWord())) {
+                Play.youWin();
+                break;
+            }
             play.getUserInput();
-
         }
 
-        System.out.println(gallows.printGallows());
-        System.out.println("GAME OVER!!!!");
+        if (listSize >= 6) {
+            Play.youLose();
+        }
 
     }
 
@@ -49,6 +54,7 @@ public class Play {
 
         System.out.print("Guess: ");
         uGuess = ug.nextLine();
+        if (Objects.equals(uGuess, "")) { uGuess = "^";}
         char charGuess = uGuess.charAt(0);
         guess.setUserGuess(charGuess);
 
@@ -60,5 +66,14 @@ public class Play {
 
     public int getSizeList() {
         return listSize;
+    }
+
+    public static void youWin() {
+        System.out.println("You win!!!");
+    }
+
+    public static void youLose() {
+        System.out.println(Gallows.printGallows());
+        System.out.println("GAME OVER!!!!");
     }
 }

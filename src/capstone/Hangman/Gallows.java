@@ -59,7 +59,7 @@ public class Gallows {
                     "     |\n" +
                     " =========\n"};
 
-    public String printGallows() {
+    public static String printGallows() {
         Play p = new Play();
         int numb = p.getSizeList();
         return (gallows[numb]);
