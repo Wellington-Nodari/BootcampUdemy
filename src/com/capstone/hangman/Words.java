@@ -1,4 +1,4 @@
-package capstone.Hangman;
+package com.capstone.hangman;
 
 public class Words extends Play{
     private static String sWord;

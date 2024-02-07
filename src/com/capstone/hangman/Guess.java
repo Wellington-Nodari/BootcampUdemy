@@ -1,4 +1,4 @@
-package capstone.Hangman;
+package com.capstone.hangman;
 
 import java.util.ArrayList;
 

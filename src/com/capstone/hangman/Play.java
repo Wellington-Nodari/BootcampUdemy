@@ -1,4 +1,4 @@
-package capstone.Hangman;
+package com.capstone.hangman;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -27,7 +27,7 @@ public class Play {
             System.out.println("----------------");
             System.out.println("The Hangman Game");
             System.out.println("----------------");
-            System.out.println("Word to guess: " + Words.getsWord());
+//            System.out.println("Word to guess: " + Words.getsWord());
 
             System.out.println(gallows.printGallows());
 
@@ -74,6 +74,7 @@ public class Play {
 
     public static void youLose() {
         System.out.println(Gallows.printGallows());
+        System.out.println("The Word to guess was: " + Words.getsWord());
         System.out.println("GAME OVER!!!!");
     }
 }

@@ -1,4 +1,4 @@
-package capstone.Hangman;
+package com.capstone.hangman;
 
 public class Hangman {
     public static void main(String[] args) {
