@@ -2,7 +2,7 @@ package com.capstone.hangman;
 
 import java.util.ArrayList;
 
-public class Guess extends Words{
+public class Guess extends Words {
 
     static char[] letterList;
     private static char userGuess;
@@ -38,27 +38,30 @@ public class Guess extends Words{
     public static char[] getWordInList() {
         letterList = new char[getsWord().length()];
         for (int i = 0; i < getsWord().length(); i++) {
-        letterList[i] = getsWord().charAt(i);
+            letterList[i] = getsWord().charAt(i);
         }
         return letterList;
     }
 
     public static boolean triedGuess() {
         findingWord = Words.placeholders();
+        boolean result = true;
 
         if (getsWord().contains(String.valueOf(userGuess))) {
             if (getRGuesses().contains(String.valueOf(userGuess))) {
                 System.out.println("You've already entered this letter, please try another one");
                 return false;
-            } for (int i = 0; i < getsWord().length(); i++) {
+            }
+            for (int i = 0; i < getsWord().length(); i++) {
                 if (getsWord().charAt(i) == userGuess) {
                     findingWord.setCharAt(i, userGuess);
                     setRGuesses(String.valueOf(userGuess));
-                    return false;
+                    result = false;
                 }
             }
-        } setWGuesses(String.valueOf(userGuess));
-          return true;
-
+        } else {
+            setWGuesses(String.valueOf(userGuess));
+        }
+        return result;
     }
 }
