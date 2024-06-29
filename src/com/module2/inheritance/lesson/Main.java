@@ -31,6 +31,9 @@ public class Main {
 
         pants.fold();
         productStore(pants);
+
+        System.out.println(pants);
+        System.out.println(shirt);
     }
 
 //    public static void pantStore(Pants pants) {
@@ -48,7 +51,8 @@ public class Main {
 
     // this method is a good simplification of the 2 above by using Polymorphism
     public static void productStore(Product product) {
-        System.out.println("Thank you for purchasing " + product.getBrand() + " " + product.getClass().getSimpleName().toLowerCase() + ". Your total comes to " + product.getPrice());
+        product.wear();
+        System.out.println("Thank you for purchasing " + product.getBrand() + " " + product.getClass().getSimpleName().toLowerCase() + ". Your total comes to " + product.getPrice() + "\n");
     }
 
 }

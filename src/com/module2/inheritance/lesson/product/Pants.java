@@ -28,6 +28,22 @@ public class Pants extends Product{
         this.length = length;
     }
 
+    @Override
+    public void fold() {
+        System.out.println("Folding a pants.");
+        super.fold();
+    }
 
+    @Override
+    public void wear() {
+        System.out.println("The pants fits well on you!");
+    }
 
+//    @Override
+//    public String toString() {
+//        return "Pants{" +
+//                "waist=" + waist +
+//                ", length=" + length +
+//                '}';
+//    }
 }

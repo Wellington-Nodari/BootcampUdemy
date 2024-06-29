@@ -1,6 +1,7 @@
 package com.module2.inheritance.lesson.product;
 
-public class Product {
+public abstract class Product {   // abstract classes cannot be instantiated (you can't create objects of this class)
+                                    // it mainly serves to the purpose to support the child classes
 
     private double price;
     private String color;
@@ -37,6 +38,8 @@ public class Product {
     }
 
     public void fold() {
-        System.out.println("\nFolding my " + this.getBrand() + " " + this.getClass().getSimpleName());
+        System.out.println("Folding my " + this.getBrand() + " " + this.getClass().getSimpleName());
     }
+
+    public abstract void wear();  // abstract methods don't have body, and it only serves to expose a method that the child classes MUST override
 }

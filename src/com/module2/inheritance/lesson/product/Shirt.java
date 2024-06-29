@@ -18,5 +18,19 @@ public class Shirt extends Product{
         this.size = size;
     }
 
+    @Override  // this keyword ensures that you're actually overriding a method from a parent class
+    public void fold() {
+        System.out.println("Folding a shirt.");
+        super.fold();  // super.<something> will access members of the parent class/ super class
+    }
 
+    @Override
+    public void wear() {
+        System.out.println("The shirt looks great on you!");
+    }
+
+    @Override
+    public String toString() {
+        return "SHIRT: " + this.size + " " + super.getBrand() + " " + super.getColor() + " " + super.getPrice();
+    }
 }
