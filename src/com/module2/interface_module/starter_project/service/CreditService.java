@@ -1,8 +1,8 @@
-package com.module2.interface_module.service;
+package com.module2.interface_module.starter_project.service;
 
-import com.module2.interface_module.pojo.Checking;
-import com.module2.interface_module.pojo.Credit;
-import com.module2.interface_module.repository.AccountRepository;
+import com.module2.interface_module.starter_project.pojo.Checking;
+import com.module2.interface_module.starter_project.pojo.Credit;
+import com.module2.interface_module.starter_project.repository.AccountRepository;
 
 import java.math.BigDecimal;
 

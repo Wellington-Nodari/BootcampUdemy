@@ -1,4 +1,4 @@
-package com.module2.interface_module.pojo;
+package com.module2.interface_module.starter_project.pojo;
 
 import java.math.BigDecimal;
 

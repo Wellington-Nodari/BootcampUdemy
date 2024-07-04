@@ -1,18 +1,16 @@
-package com.module2.interface_module;
+package com.module2.interface_module.starter_project;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-import com.module2.interface_module.pojo.Account;
-import com.module2.interface_module.pojo.Checking;
-import com.module2.interface_module.pojo.Credit;
-import com.module2.interface_module.repository.AccountRepository;
-import com.module2.interface_module.service.AccountService;
-import com.module2.interface_module.service.CheckingService;
-import com.module2.interface_module.service.CreditService;
+import com.module2.interface_module.starter_project.pojo.Account;
+import com.module2.interface_module.starter_project.pojo.Checking;
+import com.module2.interface_module.starter_project.pojo.Credit;
+import com.module2.interface_module.starter_project.repository.AccountRepository;
+import com.module2.interface_module.starter_project.service.AccountService;
+import com.module2.interface_module.starter_project.service.CheckingService;
+import com.module2.interface_module.starter_project.service.CreditService;
 
 public class Main {
 
@@ -46,8 +44,6 @@ public class Main {
         AccountService accountService = new CheckingService(repository);
         accountService.deposit("1", new BigDecimal("100"));
         accountService.withdraw("1", new BigDecimal("50"));
-
-        HashMap hashmap = new HashMap();
     }
 
 

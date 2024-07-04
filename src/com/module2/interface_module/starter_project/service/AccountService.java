@@ -1,4 +1,4 @@
-package com.module2.interface_module.service;
+package com.module2.interface_module.starter_project.service;
 
 import java.math.BigDecimal;
 

@@ -1,10 +1,10 @@
-package com.module2.interface_module.repository;
+package com.module2.interface_module.starter_project.repository;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import com.module2.interface_module.pojo.Account;
-import com.module2.interface_module.pojo.Checking;
+import com.module2.interface_module.starter_project.pojo.Account;
+import com.module2.interface_module.starter_project.pojo.Checking;
 
 public class AccountRepository {
 
